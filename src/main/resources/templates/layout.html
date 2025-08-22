@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${titulo}"></title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="icon" href="imagenes/favicon.png" type="image/png">
+</head>
+<body>
+
+    <header th:fragment="header">
+        <div class="logo">
+            <img src="/imagenes/icon.png" alt="Pottermania Icon">
+        </div>
+        <div class="minititulo">
+            <img src="/imagenes/pottermania.png" alt="Pottermania">
+        </div>
+        <nav>
+            <ul>
+                <li><a th:href="@{/}">HOME</a></li>
+                <li><a th:href="@{/blog}">BLOG</a></li>
+                <li><a th:href="@{/tienda}">TIENDA</a></li>
+                <li><a th:href="@{/carrito}">CARRITO</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <footer th:fragment="footer">
+        <div class="footer-content">
+            <div class="contact-info">
+                <img src="/imagenes/Logo.png" alt="Pottermania Logo">
+                <h4>Envia tu lechuza:</h4>
+                <p>email: merodeadores@pottermania.com</p>
+                <p>Direccion: Callejon Diagon</p>
+            </div>
+            <div class="footer-menu">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a th:href="@{/}">HOME</a></li>
+                    <li><a th:href="@{/blog}">BLOG</a></li>
+                    <li><a th:href="@{/tienda}">TIENDA</a></li>
+                    <li><a th:href="@{/carrito}">CARRITO</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+                <!--<li> Buscador deshabilitado
+                    <form action="#" method="get" class="search-form">
+                        <input type="text" placeholder="Buscar..." name="q">
+                        <button type="submit">🔍</button>
+                    </form>
+                </li>-->
+</body>
+</html>

@@ -1,0 +1,515 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    /*background-color: #f4f4f4;*/
+    background-image: url("/imagenes/fondo2.jpg"); /*  Ruta relativa */
+    background-repeat: no-repeat; /*  No repetir la imagen */
+    background-size: cover; /*  Ajustar la imagen para cubrir todo el elemento */
+    background-position: center; /* Centrar la imagen */
+    color: #333;
+}
+
+/* Cabecera */
+header {
+    background-image: url("/imagenes/cabecera1.jpg"); /*  Ruta relativa */
+    background-repeat: no-repeat; /*  No repetir la imagen */
+    background-size: cover; /*  Ajustar la imagen para cubrir todo el elemento */
+    background-position: center; /* Centrar la imagen */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    flex: 1; /*Permite que el logo ocupe su propio espacio*/ 
+}
+
+header .logo img {
+    height: 65px;
+}
+
+.minititulo {
+    /* Se centrara dentro del espacio que le quede */
+    flex: 1;
+    display: flex;
+    justify-content: center; /*centra la imagen horizontalmente*/
+    align-items:center; /*centra la imagen verticalmente*/
+}
+
+.minititulo img {
+    max-height: 65px; /*Ajustamos la altura en la imagen, no en el contendor*/
+    height: auto; /*mantiene la proporcion de la imagen*/
+}
+
+header nav {
+    flex: 1;  
+    display: flex;  /*Añade Flexbox para alinear el menú a la derecha */
+    justify-content: flex-end;  /*Alinea el menú a la derecha */
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/*estilos para cajas del saludo en index*/
+.titulo {
+    /*max-width: 100%;
+    height: auto;*/
+    margin-bottom: 1px;  /*Espacio entre la imagen y el texto */
+}
+
+.saludo {
+    text-align: center; /* Centra el contenido dentro del contenedor */
+    margin-bottom: 1px; /* Añade un espacio debajo del contenedor */
+}
+
+.h1 h2{
+    font-family:Impact, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    text-align: center; /* Asegura que el texto esté centrado */
+}
+
+.saludo p {
+    font-family:Arial, sans-serif;
+    font-weight: bold;
+    text-align: center; /* Asegura que el texto esté centrado */
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.action-button {
+    width: 250px; /* Define un ancho fijo para las imágenes */
+    height: auto;
+    margin: 0 35px; /* Espacio entre los botones */
+    /*border: 2px solid #5d3a04;
+    border-radius: 8px;*/
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-button:hover {
+    transform: translateY(-5px); /* Efecto al pasar el cursor */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Pie de página */
+footer {
+    background-color: #570000;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer .footer-content {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+}
+
+footer .footer-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .footer-menu ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estilos para el blog */
+.blog-title {
+    font-family:Impact, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.post-grid {
+    display: grid;
+    /* Define 3 columnas de igual tamaño, que se adaptan al espacio disponible */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; /* Espacio entre las tarjetas */
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding: 20px;
+
+}
+
+.blog-post-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: justify;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+
+}
+
+.blog-post-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-post-card h2 {
+    font-weight: bold; /* Título en negrita */
+    color: #000000;
+    margin-top: 0;
+}
+
+.blog-post-card .post-meta {
+    font-style: italic; /* Fecha de publicación en cursiva */
+    color: #2a2a2a;
+    font-size: 0.9em;
+}
+
+.blog-post-card p {
+    line-height: 1.6;
+}
+
+
+/* Estilos para la tienda */
+.tienda-title {
+    font-family:Impact, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.categoria-grid {
+    display: grid;
+    /* La clave: crea columnas automáticamente para ajustarse al espacio */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px; /* Espacio entre las tarjetas */
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding: 20px;
+}
+
+
+.product-grid {
+    display: grid;
+    /* Define 4 columnas de igual tamaño, que se adaptan al espacio disponible */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; /* Espacio entre las tarjetas */
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding: 20px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.product-card h3 {
+    font-size: 1.2em;
+    color: #4b2c01;
+    margin-top: 0;
+}
+
+.product-card .price {
+    font-weight: bold;
+    color: #008000;
+    font-size: 1.1em;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); 
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding: 20px;
+}
+
+.articles-header {
+    display: flex;
+    justify-content: flex-end; /* Alinea el botón a la derecha */
+    margin-bottom: 20px; /* Espacio debajo del botón */
+}
+
+.add-to-cart-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #5d3a04;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #7a4f06;
+}
+
+/* Estilos para la página del carrito */
+/* Estilos para el contenedor principal de todo el carrito */
+.cart-main-container {
+    max-width: 800px; /* Ancho máximo de 800px como solicitaste */
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Efecto de sombra para el fondo blanco */
+    border-radius: 8px;
+}
+
+.cart-page-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Nuevo CSS para el checkbox */
+.form-check-flex {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre el checkbox y la etiqueta */
+}
+
+.form-check-flex label {
+    white-space: nowrap; /* Fuerza a que el texto se mantenga en una sola línea */
+}
+
+
+/* Estilos para la columna de la derecha (solo el resumen del pedido) */
+.order-summary-box {
+    /*flex: 0 0 350px;  Ancho fijo para el resumen del pedido */
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    height: fit-content; /* Se ajusta a la altura del contenido */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Estilos para el listado de productos como una tabla*/
+.product-table-wrapper {
+    margin-bottom: 20px;
+}
+
+.cart-headers, .cart-item-row {
+    display: grid; 
+    grid-template-columns: 2fr 1fr 1fr 0.5fr;
+    align-items: center; /* Centra verticalmente los elementos */
+    gap: 10px; /* Espacio entre el nombre, la cantidad, el precio y el botón */
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.cart-headers {
+    font-weight: bold;
+    border-bottom: 2px solid #333;
+}
+
+/* Alineación de las cabeceras */
+.header-product {
+    text-align: left;
+}
+.header-quantity {
+    text-align: center;
+}
+.header-price {
+    text-align: right;
+}
+.header-actions {
+    text-align: center; /* O ajusta según necesites para el botón "Eliminar" */
+}
+
+.cart-item-row .item-name {
+    font-weight: 500;
+}
+
+.item-quantity {
+    text-align: center;
+}
+
+.item-price {
+    text-align: right; 
+    font-weight: bold;
+}
+
+.item-remove {
+    text-decoration: none;
+    color: #c00;
+}
+
+.cart-title {
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.empty-cart-message {
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 50px;
+}
+
+/* Sección inferior: Formulario y Resumen del pedido */
+.checkout-section {
+    display: flex; /* Habilita Flexbox */
+    justify-content: space-between; /* Espacia los dos bloques */
+    gap: 40px; /* Espacio entre el formulario y el resumen */
+    margin-top: 40px; /* Espacio con la tabla de productos */
+    flex-wrap: wrap; /* Permite que los elementos se apilen en pantallas pequeñas */
+}
+
+/* Estilos para el formulario del comprador */
+.buyer-info-box {
+    flex: 1; /* ocupa el espacio disponible*/
+    padding-right: 20px;
+    /*margin-top: 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;*/
+}
+
+.buyer-info-title, .order-summary-title {
+    margin-bottom: 15px;
+}
+
+
+.order-summary-box {
+    flex: 0 0 300px; /* Ancho fijo para el resumen */
+    height: fit-content;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.total-line {
+    font-weight: bold;
+    border-top: 1px dashed #ccc;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+/* Estilo para el boton finalizar compra */
+.finalizar-btn {
+    background-color: #05418a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.finaliazr-btn:hover {
+    background-color: #150453;
+}
+
+/* Estilos para los campos del formulario */
+.buyer-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el padding no añada ancho extra */
+}
+
+/* Estilos para el listado de productos */
+.cart-item {
+    display: flex; /* Habilita Flexbox para alinear los elementos dentro de cada fila */
+    align-items: center; /* Centra verticalmente los elementos */
+    gap: 15px; /* Espacio entre el nombre, la cantidad, el precio y el botón */
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #4b2c01;
+}
+
+.cart-item p {
+    margin: 0;
+    font-weight: bold;
+    color: #008000;
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #333;
+}
+
+.cart-total p {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #4b2c01;
+    margin: 5px 0;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}

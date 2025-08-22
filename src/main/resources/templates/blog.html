@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head}"></head>
+<body>
+    <header th:replace="~{layout :: header}"></header>
+
+    <main>
+        <div class="saludo">
+            <img src="/imagenes/blogtitle.png" alt="La Lechuceria" class="titulo">
+        </div>
+        <h1 class="blog-title">Blog de Pottermania</h1>
+        <section class="post-grid">
+            <article class="blog-post-card" th:each="post : ${todasLasPublicaciones}">
+                <h2 th:text="${post.titulo}"></h2>
+                <p class="post-meta" th:text="${#temporals.format(post.fechaPublicacion, 'dd MMMM yyyy')}"></p>
+                <p th:text="${post.contenido}"></p>
+            </article>
+        </section>
+    </main>
+
+    <footer th:replace="~{layout :: footer}"></footer>
+</body>
+</html>

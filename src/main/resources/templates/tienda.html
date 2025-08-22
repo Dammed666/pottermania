@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head}"></head>
+<body>
+    <header th:replace="~{layout :: header}"></header>
+
+    <main>
+        <div class="saludo">
+            <img src="/imagenes/tiendatitle.png" alt="Honeydukes" class="titulo">
+        </div>
+        <h1 class="tienda-title">Nuestra Tienda Mágica</h1>
+
+        <div th:if="${mensajeExito}" class="success-message">
+            <p th:text="${mensajeExito}"></p>
+        </div>
+
+        <div th:if="${modo == 'categorias'}" class="categoria-grid">
+            <div class="product-card" th:each="categoria : ${categorias}">
+                <a th:href="@{/tienda/categoria/{id}(id=${categoria.id})}">
+                    <img th:src="@{${categoria.fotoCategoria}}" th:alt="${categoria.nombreCategoria}" class="product-image">
+                    <h3 th:text="${categoria.nombreCategoria}">Nombre de la Categoría</h3>
+                </a>
+            </div>
+        </div>
+        
+        <div th:if="${modo == 'articulos'}">
+            <div class="articles-grid">
+                <div class="articles-header">
+                    <a th:href="@{/tienda}" class="add-to-cart-btn">Volver a Categorías</a>
+                </div>
+            </div>
+            <div class="product-grid">              
+                <div class="product-card" th:each="articulo : ${articulos}">
+                    <img th:src="@{${articulo.fotoarticulo}}" th:alt="${'Imagen de ' + articulo.nombre}" class="product-image">
+                    <h3 th:text="${articulo.nombre}">Nombre del Artículo</h3>
+                    <p class="price" th:text="${articulo.precio} + ' €'"></p>
+                    <p class="description" th:text="${articulo.descripcion}">Descripción breve del artículo.</p>
+                    
+                    <form th:action="@{/carrito/add/{id}(id=${articulo.id})}" method="post">
+                        <input type="hidden" name="categoriaId" th:value="${articulos.get(0).categoria.id}">
+                        <button type="submit" class="add-to-cart-btn">Añadir al carrito</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer th:replace="~{layout :: footer}"></footer>
+</body>
+</html>

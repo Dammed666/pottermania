@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head}"></head>
+<body>
+    <header th:replace="~{layout :: header}"></header>
+
+    <main>
+        <div class="saludo">
+            <img src="/imagenes/pottermania.png" alt="Pottermania Titulo" class="titulo">
+            <h1 class="blog-title">Bienvenido Potterhead</h1>
+            <p>Tu portal mágico para acceder al blog y la tienda online del universo de Harry Potter.</p>
+            <p>Desde aqui podras conocer todas las novedades de los articulos que iremos incorporando.</p>
+        </div>
+
+        <div class="saludo">
+            <img src="/imagenes/acceso.png" alt="Acceso titulo" class="titulo">
+        </div>
+        <div class="button-container">
+            <a th:href="@{/blog}">
+                <img src="/imagenes/blog.jpg" alt="Ir al Blog" class="action-button">
+            </a>
+            <a th:href="@{/tienda}">
+                <img src="/imagenes/tienda.jpg" alt="Ir a la Tienda" class="action-button">
+            </a>
+        </div>
+            
+    </main>
+
+    <footer th:replace="~{layout :: footer}"></footer>
+</body>
+</html>
